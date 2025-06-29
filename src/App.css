@@ -16,7 +16,6 @@ body {
   min-height: 100vh;
 }
 
-/* Hero Section */
 .hero-section {
   display: flex;
   align-items: center;
@@ -32,6 +31,7 @@ body {
   flex: 1;
   max-width: 600px;
   padding-right: 2rem;
+  padding-left: 3rem;
   position: relative;
 }
 
@@ -91,7 +91,6 @@ body {
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
-/* Sections */
 .about-section, .skills-section {
   padding: 4rem 2rem;
 }
@@ -146,7 +145,6 @@ body {
   font-size: 1.5rem;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .hero-section {
     flex-direction: column;

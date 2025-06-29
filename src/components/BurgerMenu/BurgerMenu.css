@@ -1,0 +1,100 @@
+.burger-menu {
+  position: relative;
+}
+
+.burger-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.burger-button span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #2c3e50;
+  margin: 3px 0;
+  transition: 0.3s;
+  transform-origin: center;
+}
+
+.burger-button.open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger-button.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-button.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.burger-nav {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background: white;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding-top: 80px;
+}
+
+.burger-nav.open {
+  right: 0;
+}
+
+.burger-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.burger-menu-list li {
+  border-bottom: 1px solid #eee;
+}
+
+.burger-menu-list a,
+.burger-contact-btn {
+  display: block;
+  padding: 1rem 2rem;
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.burger-menu-list a:hover,
+.burger-contact-btn:hover {
+  background: #f8f9fa;
+}
+
+.burger-contact-btn {
+  color: #3498db;
+  font-weight: 600;
+}
+
+.burger-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
