@@ -1,0 +1,31 @@
+.footer {
+  background: #2c3e50;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer .menu {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.footer .menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer .menu a:hover {
+  color: #3498db;
+}
+
+@media (max-width: 768px) {
+  .footer .menu {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
