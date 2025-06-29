@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useWindowSize } from '../../hooks/useWindowSize';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import './Header.css';
 
 interface HeaderProps {
@@ -23,7 +24,10 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
     return (
       <header className="header mobile">
         <div className="logo">Андрей Лысенко</div>
-        <BurgerMenu onContactClick={onContactClick} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <ThemeToggle showText={false} />
+          <BurgerMenu onContactClick={onContactClick} />
+        </div>
       </header>
     );
   }
@@ -38,9 +42,12 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
           </Link>
         ))}
       </nav>
-      <button className="button-contact" onClick={onContactClick}>
-        Контакты
-      </button>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <ThemeToggle />
+        <button className="button-contact" onClick={onContactClick}>
+          Контакты
+        </button>
+      </div>
     </header>
   );
 };

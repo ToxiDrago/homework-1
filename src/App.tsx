@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from './components/ThemeContext/ThemeContext';
 import Layout from './components/Layout/Layout';
 import Modal from './components/Modal/Modal';
 import Main from './pages/Main';
@@ -8,6 +9,7 @@ import BlogPost from './pages/BlogPost';
 import Works from './pages/Works';
 import Testimonials from './pages/Testimonials';
 import './App.css';
+import './theme.css';
 
 const App: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,7 +18,7 @@ const App: React.FC = () => {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <>
+    <ThemeProvider defaultTheme="light">
       <Layout onContactClick={openModal}>
         <Routes>
           <Route 
@@ -31,7 +33,7 @@ const App: React.FC = () => {
       </Layout>
 
       <Modal isOpen={isModalOpen} onClose={closeModal} />
-    </>
+    </ThemeProvider>
   );
 };
 
