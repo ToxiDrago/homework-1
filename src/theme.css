@@ -254,3 +254,63 @@ body.theme-dark {
 .theme-toggle-icon {
   font-size: 1.1rem;
 }
+
+.testimonials-hero {
+  background: var(--bg-hero);
+  color: var(--text-inverse);
+}
+
+.page-title {
+  color: var(--text-inverse);
+}
+
+.page-subtitle {
+  color: var(--text-inverse);
+}
+
+.testimonials-section {
+  background: var(--bg-secondary);
+}
+
+.testimonial-card {
+  background: var(--bg-primary);
+  box-shadow: 0 5px 15px var(--shadow-light);
+  border: 1px solid var(--border-color);
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 10px 30px var(--shadow-medium);
+}
+
+.testimonial-text {
+  color: var(--text-secondary);
+}
+
+.author-name {
+  color: var(--text-primary);
+}
+
+.author-position {
+  color: var(--text-secondary);
+}
+
+.author-avatar {
+  border: 3px solid var(--accent-primary);
+}
+
+.stats-section {
+  background: var(--bg-primary);
+}
+
+.stat-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.stat-number {
+  color: var(--accent-primary);
+}
+
+.stat-label {
+  color: var(--text-secondary);
+}
