@@ -5,12 +5,13 @@ import './Layout.css';
 
 interface LayoutProps {
   children: React.ReactNode;
+  onContactClick?: () => void;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children, onContactClick }) => {
   return (
     <div className="layout">
-      <Header />
+      <Header onContactClick={onContactClick} />
       <main className="main-content">
         {children}
       </main>

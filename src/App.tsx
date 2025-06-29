@@ -11,7 +11,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Layout>
+      <Layout onContactClick={openModal}>
         <section className="hero-section">
           <div className="hero-content">
             <span className="hero-rectangle"></span>
@@ -29,7 +29,7 @@ const App: React.FC = () => {
           </div>
           <div className="hero-image">
             <img 
-              src="/path-to-your-photo.jpg" 
+              src="/src/assets/andrew-photo.jpg" 
               alt="Андрей Лысенко"
               className="profile-photo"
             />

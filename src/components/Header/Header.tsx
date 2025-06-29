@@ -1,7 +1,11 @@
 import React from 'react';
 import './Header.css';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onContactClick?: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
   return (
     <header className="header">
       <div className="logo">Андрей Лысенко</div>
@@ -11,7 +15,9 @@ const Header: React.FC = () => {
         <a href="#testimonials">Отзывы</a>
         <a href="#blog">Блог</a>
       </nav>
-      <button className="button-contact">Контакты</button>
+      <button className="button-contact" onClick={onContactClick}>
+        Контакты
+      </button>
     </header>
   );
 };
