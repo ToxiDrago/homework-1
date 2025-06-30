@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 interface Todo {
   id: number;
@@ -39,7 +39,7 @@ export const fetchTodos = createAsyncThunk(
       
       const data = await response.json();
       return data.todos;
-    } catch (error) {
+    } catch {
       return rejectWithValue('Network error occurred');
     }
   }
@@ -73,7 +73,7 @@ export const addTodo = createAsyncThunk(
       
       const data = await response.json();
       return data;
-    } catch (error) {
+    } catch {
       return rejectWithValue('Network error occurred');
     }
   }
@@ -103,7 +103,7 @@ export const updateTodo = createAsyncThunk(
       
       const data = await response.json();
       return data;
-    } catch (error) {
+    } catch {
       return rejectWithValue('Network error occurred');
     }
   }
@@ -130,7 +130,7 @@ export const deleteTodo = createAsyncThunk(
       }
       
       return id;
-    } catch (error) {
+    } catch {
       return rejectWithValue('Network error occurred');
     }
   }

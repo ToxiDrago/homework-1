@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, type PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 interface User {
   id: number;
@@ -51,7 +51,7 @@ export const loginUser = createAsyncThunk(
       localStorage.setItem('token', data.token);
       
       return data;
-    } catch (error) {
+    } catch {
       return rejectWithValue('Network error occurred');
     }
   }
@@ -61,7 +61,6 @@ export const registerUser = createAsyncThunk(
   'auth/registerUser',
   async (credentials: RegisterCredentials, { rejectWithValue }) => {
     try {
-
       const fakeUser = {
         id: Math.floor(Math.random() * 1000),
         username: credentials.username,
@@ -76,7 +75,7 @@ export const registerUser = createAsyncThunk(
       localStorage.setItem('token', fakeUser.token);
       
       return fakeUser;
-    } catch (error) {
+    } catch {
       return rejectWithValue('Registration failed');
     }
   }
@@ -105,7 +104,7 @@ export const loadUserFromToken = createAsyncThunk(
       
       const data = await response.json();
       return { ...data, token };
-    } catch (error) {
+    } catch {
       localStorage.removeItem('token');
       return rejectWithValue('Failed to load user');
     }
@@ -169,7 +168,6 @@ const authSlice = createSlice({
         state.error = action.payload as string;
       })
       
-      // Load user from token cases
       .addCase(loadUserFromToken.pending, (state) => {
         state.loading = true;
       })
