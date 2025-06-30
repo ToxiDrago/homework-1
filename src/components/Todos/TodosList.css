@@ -1,0 +1,20 @@
+.todos-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.todos-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.todos-header h1 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.todos-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
